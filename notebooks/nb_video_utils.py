@@ -142,6 +142,7 @@ def _get_frames2(
     audio_buffer_frames: int = 0,
 ):  # -> Iterable[av.frame.Frame]
     assert len(container.streams.video) == 1
+    assert av.time_base == 1000000
 
     video_stream = container.streams.video[0]
     video_start: int = video_stream.start_time
